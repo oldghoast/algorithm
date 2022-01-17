@@ -68,4 +68,52 @@ public class BinarySearchTree {
         return false;
     }
 
+    //中序遍历
+    public void infixOrder(Node current) {
+        if (current != null) {
+            infixOrder(current.leftChild);
+            System.out.print(current.data + " ");
+            infixOrder(current.rightChild);
+        }
+    }
+
+    //前序遍历
+    public void preOrder(Node current){
+        if(current != null){
+            System.out.print(current.data+" ");
+            preOrder(current.leftChild);
+            preOrder(current.rightChild);
+        }
+    }
+
+    //后序遍历
+    public void postOrder(Node current){
+        if(current != null){
+            postOrder(current.leftChild);
+            postOrder(current.rightChild);
+            System.out.print(current.data+" ");
+        }
+    }
+
+    //找到最大值
+    public Node findMax(){
+        Node current = root;
+        Node maxNode = current;
+        while(current != null){
+            maxNode = current;
+            current = current.rightChild;
+        }
+        return maxNode;
+    }
+    //找到最小值
+    public Node findMin(){
+        Node current = root;
+        Node minNode = current;
+        while(current != null){
+            minNode = current;
+            current = current.leftChild;
+        }
+        return minNode;
+    }
+
 }
