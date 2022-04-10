@@ -12,6 +12,7 @@
         <module>exercise</module>
         <module>socket</module>
         <module>base</module>
+        <module>Thread</module>
     </modules>
 
 
